@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "orxe3-my-trips"
+    }
+  },
+  "defaultProject": "orxe3-my-trips",
+  "cli": {
+    "analytics": false
+  }
 }

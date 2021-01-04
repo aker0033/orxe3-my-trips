@@ -1,0 +1,17 @@
+<div class="jumbotron bg-transparent text-center">
+    <div class="card-block">
+      <p class="card-text">Sign in with</p>
+    </div>
+    <div class="card-block">
+      <button class="btn btn-social-icon btn-google mx-1" (click)="signInWithGoogle()"><span class="fa fa-google">Google</span></button>
+    </div>
+  </div>
+  <div *ngIf="user">
+    <div class="card-block">
+      <button class="btn btn-danger" (click)="signOut()">Sign out</button>
+      <div *ngIf="user; then callfunction;"></div>
+      <ng-template #callfunction>
+        {{redirectToTrips()}}
+      </ng-template>
+    </div>
+</div>

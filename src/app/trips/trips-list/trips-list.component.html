@@ -1,0 +1,9 @@
+<div *ngFor='let trip of trips'>
+  <div>
+    <div>Confirmation Number: {{ trip.TripID }}</div>
+    <div>Description: {{ trip.Title }}</div>
+    <div><a href="\trip?tripid={{ trip.id }}">Details</a></div>
+  </div>
+  <br>
+  <hr>
+</div>

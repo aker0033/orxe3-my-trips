@@ -1,0 +1,12 @@
+.tripheader {
+background-color: rgb(10, 72, 110);
+font-size: larger;
+color: white;
+padding: 10px;
+}
+
+.table {display:table; padding: 10px; }
+.row { display:table-row;}
+.cell {display:table-cell; padding: 8px;}
+.cancelbutton {align-content: center; padding: 25px;}
+

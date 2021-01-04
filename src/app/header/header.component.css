@@ -1,0 +1,10 @@
+.header-container {
+  background-color: rgb(10, 72, 110);
+  width: 100%;
+  min-height: 100px;
+  max-height: 300px;
+  height: auto;
+  border-style: ridge;
+  border-width: thin;
+  color: white;
+}

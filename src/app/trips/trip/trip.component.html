@@ -1,0 +1,63 @@
+<div *ngIf=" this.Trip !== null">
+<div class="tripheader">Confirmation Number: {{Trip.TripID}}</div>
+<hr>
+    <div class="table">
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell">
+        <strong>{{Trip.Title}}</strong>
+      </div>
+      </div>
+      <div class="row">
+        <div class="cell ">Origin:</div>
+        <div class="cell">{{Trip.Origin}}</div>
+      </div>
+      <div class="row">
+        <div class="cell">Destination:</div>
+        <div class="cell">{{Trip.Destination}}</div>
+      </div>
+      <div class="row">
+        <div class="cell">Departure:</div>
+        <div class="cell">{{Trip.StartDate}}</div>
+      </div>
+      <div class="row">
+        <div class="cell">Return:</div>
+        <div class="cell">{{Trip.EndDate}}</div>
+      </div>
+      <div class="row">
+        <div class="cell">Status:</div>
+        <div class="cell">{{Trip.Status}}</div>
+      </div>
+  </div>
+
+  <div class="container" *ngFor='let prod of Trip.Components'>
+  <div class="table">
+    <div class="row" *ngIf='prod.ComponentType !== null' >
+      <div class="cell">Product</div>
+      <div class="cell">{{prod.ComponentType}}</div>
+    </div>
+    <div class="row" *ngIf='prod.Description !== null' >
+      <div class="cell">Description</div>
+      <div class="cell">{{prod.Description}}</div>
+    </div>
+    <div class="row" *ngIf='prod.Cost !== null' >
+      <div class="cell">Cost</div>
+      <div class="cell">{{prod.Cost}}</div>
+    </div>
+  </div>
+  </div>
+
+  <br>
+  <br>
+  <div *ngIf='Trip.Status === "Active"'>
+  <button (click)='cancelTrip(Trip.id)'>Cancel Trip</button>
+  </div>
+  <div *ngIf='Trip.Status === "Canceled"'>
+    Trip Canceled
+    </div>
+  <hr>
+  <br>
+  <div><a routerLink="/trips"><<<< Back to Trips</a></div>
+  </div>
+
+
