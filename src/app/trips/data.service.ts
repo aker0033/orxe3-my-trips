@@ -1,4 +1,3 @@
-import { Component } from '@angular/core';
 import {InMemoryDbService} from 'angular-in-memory-web-api';
 
 export class DataService implements InMemoryDbService{
@@ -32,7 +31,7 @@ export class DataService implements InMemoryDbService{
   {
     id: 2, Origin: 'MSP', Destination: 'LGA',
     StartDate: new Date('8/10/2021, 9:45 AM'), EndDate: new Date('8/15/2021, 3:50 PM'),
-    Title: 'New York summer', TripID: 'TRT5553', Status: 'Active',
+    Title: 'New York summer', TripID: 'DR5421', Status: 'Active',
     Components: [
       {
         ComponentType: 'Air',
@@ -54,7 +53,7 @@ export class DataService implements InMemoryDbService{
   {
     id: 3, Origin: 'LAS', Destination: 'LGA',
     StartDate: new Date('10/10/2021, 8:15 AM'), EndDate: new Date('9/15/2021, 12:30 PM'),
-    Title: 'New York Autum', TripID: 'TRT5553', Status: 'Active',
+    Title: 'New York Autum', TripID: 'FGH987', Status: 'Active',
     Components: [
       {
         ComponentType: 'Air',
@@ -71,7 +70,7 @@ export class DataService implements InMemoryDbService{
   {
     id: 4, Origin: 'LAX', Destination: 'LGA',
     StartDate: new Date('11/10/2021, 1:15 PM'), EndDate: new Date('10/15/2021, 5:55 PM'),
-    Title: 'New York Thanksgiving', TripID: 'TRT5553', Status: 'Active',
+    Title: 'New York Thanksgiving', TripID: 'HOP009', Status: 'Active',
     Components: [
       {
         ComponentType: 'Air',
@@ -93,7 +92,7 @@ export class DataService implements InMemoryDbService{
   {
     id: 5, Origin: 'DFW', Destination: 'SJA',
     StartDate: new Date('12/10/2021, 12:30 PM'), EndDate: new Date('11/15/2021, 2:35 PM'),
-    Title: 'Costa Rica', TripID: 'TRT5553', Status: 'Active',
+    Title: 'Costa Rica', TripID: 'DLK112', Status: 'Active',
     Components: [
       {
         ComponentType: 'Air',

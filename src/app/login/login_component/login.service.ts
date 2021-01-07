@@ -10,8 +10,6 @@ public loggedIn: boolean;
 public user: SocialUser;
   @Output()
   loginEvent: EventEmitter<SocialUser> = new EventEmitter();
-  logoutEvent: EventEmitter<Boolean> = new EventEmitter();
-
 constructor(private authService: SocialAuthService) {
   localStorage.setItem('user', '');
   this.authService.authState.subscribe((user) => {
@@ -20,6 +18,13 @@ constructor(private authService: SocialAuthService) {
     if (this.user != null) {
     this.UserLoggedIn(this.user);
     }
+  });
+ }
+
+ ngOnInit() {
+  this.authService.authState.subscribe((user) => {
+    this.user = user;
+    this.loggedIn = (user != null);
   });
  }
 
@@ -42,11 +47,11 @@ GetUserInfo(): SocialUser{
 LogUserOut(): void {
   this.authService.signOut().then(
     () => {
-  this.user = null;
-  this.loggedIn = false;
-  localStorage.setItem('user', '');
+    localStorage.setItem('user', '');
+    this.user = null;
+    this.loginEvent.emit(this.user)
     }
-    );
+    ).catch(()=>this.loginEvent.emit(null));
 }
 
 Login(): void {
@@ -58,7 +63,11 @@ Login(): void {
   );
 }
 
-isAuthenticated(): boolean{
+isAuthenticated(){
+  this.authService.authState.subscribe((user) => {
+    this.user = user;
+    this.loggedIn = (user != null || user != undefined || !user);
+  });
   return this.loggedIn;
  }
 

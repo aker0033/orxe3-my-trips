@@ -8,3 +8,7 @@
   border-width: thin;
   color: white;
 }
+
+.user-info-header {
+  align-self: right;
+}

@@ -37,6 +37,10 @@ class LitFooter extends LitElement {
       <footer class="footer-container">
         <h4 class="footer-text"> ${this.footer}</h4>
         <div class="table">
+        <div class="footer-row">
+            <a class="footer-link" href="/trips">Home</a>
+          </div>
+          <br>
           <div class="footer-row">
             <a class="footer-link" href="/contact">Contact Us</a>
           </div>
@@ -46,7 +50,7 @@ class LitFooter extends LitElement {
           </div>
           <br>
           <div class="footer-row">
-            <a class="footer-link" href="/terms">Terms and conditions</a>
+            <a class="footer-link" href="/terms">Terms And Conditions</a>
            </div>
         </div>
       </footer>

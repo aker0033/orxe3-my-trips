@@ -1,3 +1,5 @@
+import { AuthGaurd } from './login/login_component/auth-gaurd.service';
+import { LoginService } from './login/login_component/login.service';
 import { HttpClient } from '@angular/common/http';
 import { DataService } from './trips/data.service';
 import { TripsService } from './trips/trips.service';
@@ -13,11 +15,13 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import { GoogleLoginProvider} from 'angularx-social-login';
 import { HttpClientModule } from '@angular/common/http';
-import './lit-elements/app.footer.litelement';
-import './lit-elements/app.terms.litelement';
+//import './lit-elements/app.footer.litelement';
 // import { SocialLoginModule, SocialAuthServiceConfig } from 'lib';
 // import { GoogleLoginProvider } from 'lib';
 import { HeaderComponent } from './header/header.component';
+import { TermsComponent } from './terms/terms.component';
+import { StaticContentComponent } from './static-content/static-content.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -26,7 +30,10 @@ import { HeaderComponent } from './header/header.component';
     TripComponent,
     LoginComponent,
     TripsListComponent,
-    HeaderComponent
+    HeaderComponent,
+      TermsComponent,
+      StaticContentComponent,
+      FooterComponent
    ],
   imports: [
     BrowserModule,
@@ -51,7 +58,7 @@ import { HeaderComponent } from './header/header.component';
         ],
       } as SocialAuthServiceConfig,
     },
-    HttpClient
+    HttpClient, LoginService, AuthGaurd
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],

@@ -14,7 +14,6 @@ export class AuthGaurd implements CanActivate {
           return true;
         }else{
           this.router.navigate(['/']);
-          return false;
         }
       }
 }

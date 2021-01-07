@@ -1,6 +1,8 @@
 <div class="header-container">
-  <div *ngIf="userInfo !== null && userInfo.name !== null">Hello {{userInfo.name}}
-    <div><img src="{{userInfo.photoUrl}}"/></div>
+  <div *ngIf="userInfo?.name">
+  <div class="user-info-header"> Hello {{userInfo.name}}
+    <div><img bind-src="userInfo.photoUrl"/></div>
   </div>
-
+  <button (click)="LogoutEvent()">Log Out</button>
+</div>
 </div>

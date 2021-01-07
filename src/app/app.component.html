@@ -1,8 +1,8 @@
 <app-header></app-header>
-<app-login></app-login>
 <div class="row">
 <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
   <router-outlet></router-outlet>
 </div>
+<div class="spinner-container" *ngIf="loading"><div class="loader"></div></div>
 </div>
-<lit-footer></lit-footer>
+<app-footer></app-footer>

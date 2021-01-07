@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit{
   ngOnInit() {
     this.loginSvc.loginEvent.subscribe((user) => {
       this.user = user;
+      this.loggedIn = (user === null || user === undefined);
     });
   }
 
